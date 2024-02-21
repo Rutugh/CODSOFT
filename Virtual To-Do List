@@ -1,0 +1,88 @@
+Tks=[]
+
+def addTask():
+    task=input("Enter your task: ")
+    Tks.append(task)
+    print(f"Your task '{task}' is added to the list✔️")
+
+def trackTask():
+    t=str(input("Enter task to track: "))
+    i=0
+    for task in Tks:
+        i=i+1
+        if(t == task):
+            print(f"🎉Your task is at index {i}.")
+            return
+    
+    print("\nTask not found!")
+    print("\nAdd task to the list and try again.")
+    return
+
+def displayTask():
+    i=1
+    if not Tks:
+        print("\nSorry! your list is Empty !")
+    else:
+        print("\nYour tasks are 👉")
+        for task in Tks:
+            
+            print(f"\n{i}. {task}")
+            i=i+1
+       
+    
+
+def removeTask():
+    
+    try:
+        index=int(input("\nEnter the index of task to remove: "))
+        if index < (len(Tks)+1) and index > 0:
+            print(f"Removing task '{index}. {Tks[index-1]}' from the list.")
+            Tks.pop(index-1)
+            print("\nRemaining Tasks: 🚀")
+            if not Tks:
+                print("\nLooks like you completed all tasks already !😀")
+                
+            else:
+                i=1
+                for task in Tks:
+                    print(f"\n{i}. {task}")
+                    i=i+1
+                
+        else:
+            print("\nInvalid index.")
+
+    except:
+        print("\nInvalid Input. Please try again !")
+
+
+if __name__ == "__main__":
+    print("")
+    print("⭐Welcome to our Virtual To-Do-List✅ ! 😊")
+
+    while True:
+        print("\nSelect one option: 🐍")
+        print("➢ ➢ ➢ ➢ ➢ ➢ ➢ ➢ ➢")
+        print("\n")
+        print("☆ 1 Add New Task 🎯")
+        print("☆ 2 Track a task 📍")
+        print("☆ 3 Display all tasks 📋")
+        print("☆ 4 Remove a Task ❌")
+        print("☆ 5 Exit 👋")
+
+        index=int(input("\nYour Choice: "))
+        
+        if(index==1):
+            
+            addTask()
+        elif(index==2):
+            trackTask()
+        elif(index==3):
+            displayTask()
+        elif(index==4):
+            removeTask()
+        elif(index==5):
+            break
+        else:
+            print("\nPlease enter a valid choice!")
+        
+    print("\nGoodBye!🌻 Keep Visiting ˶ᵔ ᵕ ᵔ˶ \n")
