@@ -1,1 +1,1 @@
-Different command-line applications using Python. Built different games using Python libraries. 
+This repo contains several different games using Python using Python libraries. 
